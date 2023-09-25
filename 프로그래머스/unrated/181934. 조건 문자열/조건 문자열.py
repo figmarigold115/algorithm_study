@@ -1,4 +1,2 @@
 def solution(ineq, eq, n, m):
-    if eq == '!':
-        return int(eval(f'{n}{ineq}{m}'))
-    return int(eval(f'{n}{ineq}{eq}{m}'))
+    return int(eval(str(n) + ineq + eq.replace('!', '') + str(m)))
