@@ -4,19 +4,11 @@ def solution(code):
     
     for i in range(len(code)):
         if code[i] == '1':
-            if mode == 0:
-                mode = 1
-            elif mode == 1:
-                mode = 0
+            mode = 1 - mode
         else:
-            if mode == 0 and i % 2 == 0:
-                answer += code[i]
-            elif mode == 1 and i % 2 == 1:
+            if mode == 0 and i % 2 == 0 or mode == 1 and i % 2 == 1:
                 answer += code[i]
             else:
                 continue
                 
-    if not answer:
-        answer = "EMPTY"
-                
-    return answer
+    return answer if answer else 'EMPTY'
