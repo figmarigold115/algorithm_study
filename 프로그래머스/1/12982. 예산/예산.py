@@ -5,7 +5,7 @@ def solution(d, budget):
     for i in d:
         budget -= i
         if budget < 0:
-            return cnt
+            break
         cnt += 1
     
     return cnt
