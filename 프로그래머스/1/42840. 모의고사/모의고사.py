@@ -16,11 +16,8 @@ def solution(answers):
             score[2] += 1
         
     msc = max(score)
-    if msc == score[0]:
-        answer.append(1)
-    if msc == score[1]:
-        answer.append(2)
-    if msc == score[2]:
-        answer.append(3)
+    for j in range(len(score)):
+        if score[j] == msc:
+            answer.append(j+1)
     
     return answer
